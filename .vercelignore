@@ -1,0 +1,4 @@
+api.json
+node_modules
+.env*
+.git

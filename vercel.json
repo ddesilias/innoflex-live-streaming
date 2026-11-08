@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node scripts/build-interface.mjs",
+  "outputDirectory": "dist",
+  "installCommand": "echo 'Static interface build'",
+  "rewrites": [
+    {
+      "source": "/agents",
+      "destination": "/index-agents.html"
+    }
+  ]
+}

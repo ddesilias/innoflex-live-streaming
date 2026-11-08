@@ -1,8 +1,10 @@
 'use strict';
-const fetchJsonFile = await fetch("./api.json")
+const fetchJsonFile = await fetch(location.hostname.endsWith(".vercel.app") ? "./api.demo.json" : "./api.json")
 const DID_API = await fetchJsonFile.json()
 
-if (DID_API.key == '🤫') alert('Please put your api key inside ./api.json and restart..');
+if (!DID_API.key) {
+  document.querySelectorAll('button, input[type="button"], input[type="submit"]').forEach(button => { button.disabled = true; });
+}
 
 const RTCPeerConnection = (
   window.RTCPeerConnection ||
